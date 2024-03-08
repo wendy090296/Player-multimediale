@@ -1,8 +1,11 @@
 package PlayerMultimediale;
 
-public class Audio {
+import Interfaces.Brightness;
+import Interfaces.Playable;
+
+public class Audio extends MultimediaElement implements Playable {
     //PROPERTIES
-    private String title;
+
     private int duration;
     private int volume;
 
@@ -10,29 +13,49 @@ public class Audio {
 
     //CONSTRUCTOR
     public Audio(String title, int duration, int volume) {
-        this.title= title;
-        this.duration= duration;
-        this.volume= volume;
+        super(title);
+        this.duration = duration;
+        this.volume = volume;
 
     }
+
+
     //---------------------------------------//
 
 
     //INSTRUCTIONS
 
-    public void play(){
-        System.out.println("Registrazione audio: " + this.title);
+
+
+    @Override
+    public void play() {
+        for (int i = 0; i < duration; i++){
+            System.out.println(this.title + " " + "!".repeat(volume)); //ripeto la stringa ! per tante volte quante sono quelle in cui viene passato volume;
+        }
+
     }
 
-    public int increaseVolume(){
-        return this.volume++;
+    @Override
+    public int increaseVolume() {
+       return  this.volume++;
 
     }
 
-    public int decreaseVolume(){
-       return  this.volume--;
+
+
+    @Override
+    public int decreaseVolume() {
+        if(this.volume>0){
+            return this.volume--;
+        }
+        return 0;
     }
 
+//SETTER:
+
+    public void setVolume(int volume) { // perché volume é  private e non accessibile dall'esterno.
+        this.volume = volume;
+    }
 
 }
 

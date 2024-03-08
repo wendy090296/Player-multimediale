@@ -1,12 +1,16 @@
 package PlayerMultimediale;
 
-public abstract class MultimediaElement {
+public abstract class MultimediaElement { // classe astratta dalla quale le altre ereditano i membri.
     //PROPERTIES
-    private  String title;
+    protected  String title;
 
     // CONSTRUCTOR
 
     public MultimediaElement(String title){
         this.title=title;
     }
+
+    //INSTRUCTIONS
+
+
 }

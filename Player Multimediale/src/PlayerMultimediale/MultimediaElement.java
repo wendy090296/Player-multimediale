@@ -10,7 +10,7 @@ public abstract class MultimediaElement { // classe astratta dalla quale le altr
         this.title=title;
     }
 
-    //INSTRUCTIONS
+
 
 
 }
